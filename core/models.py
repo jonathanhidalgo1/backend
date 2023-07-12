@@ -11,5 +11,7 @@ class List(models.Model):
 class Item(models.Model):
     name = models.CharField(max_length=50)
     list = models.ForeignKey(List, on_delete=models.CASCADE)
+    done = models.BooleanField(default=False)
     
-    
+    def __str__(self):
+        return self.name
